@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package com.github.sydneytiger.protobuf;
+
+option java_package = "com.github.sydneytiger.protobuf";
+option java_multiple_files = true;
+
+message Tribe {
+  string name = 1;
+  repeated Squad squads = 2;
+}
+
+message Squad {
+  string name = 1;
+  repeated Employee members = 2;
+}
+
+message Employee {
+  int32 id = 1;
+  string name = 2;
+  Title title = 3;
+}
+
+enum Title {
+  UNKNOWN = 0;
+  ENGINEER = 1;
+  PRODUCT_MANAGER = 2;
+  ENGINEER_MANAGER = 3;
+}
